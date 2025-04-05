@@ -1,0 +1,45 @@
+<section class="shoe-container">
+  <div class="shoe-image">
+    <img [src]="product.imageUrl" [alt]="'Image of ' + product.name" title="{{product.name}}" />
+  </div>
+
+  <section class="shoe-details">
+    <h1>{{product.name}}</h1>
+    <p class="category">{{product.category}}</p>
+    <p class="price">{{product.price}} € <span>+ Free shipping</span></p>
+
+    <form [formGroup]="productForm">
+      <div class="shoe-size">
+        <p>Size: {{product.size}}</p>
+        <p>Color: {{product.color}}</p>
+      </div>
+      <div class="actions">
+        <!-- Added aria-label for button -->
+        <button type="button" class="add-to-cart button-base" [disabled]="productIsNotAvailable" (click)="(addProductToCart())">
+          Add to Cart
+          <i class="pi pi-shopping-cart"></i>
+        </button>
+        <!-- Added aria-label for button -->
+        <button type="button" class="add-to-favorites button-base" (click)="addProductToFavorites()">
+          Add to Favorites
+          <i class="pi pi-heart"></i>
+        </button>
+      </div>
+    </form>
+    <div class="tabs">
+      <div class="card flex justify-content-center">
+        <p-accordion [multiple]="true">
+          <p-accordionTab header="Description">
+            <p>
+              {{product.description}}
+            </p>
+          </p-accordionTab>
+          <p-accordionTab header="Details">
+            <p>Brand: {{product.brand}}</p>
+            <p>Stock: {{product.stockQuantity}}</p>
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+    </div>
+  </section>
+</section>

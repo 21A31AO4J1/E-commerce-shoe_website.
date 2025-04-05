@@ -1,0 +1,55 @@
+@import "../../../styles//variables.scss";
+
+.promo-product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 4em 1em;
+  gap: 3em;
+  background-image: url("/assets/images/running-group.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px 6px 130px 0px rgba(0, 0, 0, 0.473);
+  h2 {
+    font-size: 1.2em;
+    color: $text-color;
+  }
+  h3 {
+    color: $text-color;
+    font-size: clamp(2em, 4vw, 4em);
+  }
+
+  p {
+    font-size: 1em;
+    color: $text-color;
+  }
+
+  .btn-shop-now {
+    max-width: 300px;
+    align-self: center;
+    padding: 0.8em 1.6em;
+    border: none;
+    border-radius: 4em;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    color: $text-color;
+    background-color: $secondary-color;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .promo-product {
+    align-items: center;
+    gap: 4em;
+    padding: 4em 1em;
+    text-align: center;
+  }
+}

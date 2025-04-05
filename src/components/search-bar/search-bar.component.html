@@ -1,0 +1,15 @@
+<section class="search-bar">
+  <div class="search-input-wrapper">
+    <i class="pi pi-search search-icon"></i>
+    <input 
+      type="text" 
+      placeholder="Search for shoes..." 
+      [(ngModel)]="search" 
+      (keyup)="searchProduct()"
+      class="search-input"
+    >
+    <button class="clear-button" *ngIf="search" (click)="clearSearch()" title="Clear search">
+      <i class="pi pi-times"></i>
+    </button>
+  </div>
+</section>

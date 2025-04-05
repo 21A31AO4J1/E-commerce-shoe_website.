@@ -1,0 +1,21 @@
+<section>
+  <h2>REMARKABLE</h2>
+  <p>SPEED & COMFORT</p>
+  <p-carousel (click)="goToDetails()" class="carousel" [value]="products" [numVisible]="4" [numScroll]="1"
+    [circular]="true" [responsiveOptions]="responsiveOptions" autoplayInterval="2500">
+    <ng-template let-product pTemplate="item">
+      <div class="card-wrapper">
+        <div class="image-wrapper">
+          <a href="/shop/{{product.id}}" [title]="'View details for ' + product.name"><img [src]="product.imageUrl || 'assets/images/default-product.jpg'" alt="Product Image" title="Product Image" class="" /></a>
+        </div>
+        <div class="product">
+          <p class="product-name">{{ product.name }}</p>
+          <p class="product-title"> {{ product.title }}</p>
+          <p class="product-price">
+            {{product.price + ' €'}}
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>
